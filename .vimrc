@@ -88,15 +88,12 @@ set tags=./tags;,tags;
 autocmd DirChanged * :execute "set tags=./tags;,tags;"
 	
 " open NERDTree and Startify if no file was specified
-" otherwise open NERDTree
 autocmd VimEnter *
                 \   if !argc()
                 \ |   Startify
                 \ |   NERDTree
                 \ |   wincmd w 
 								\ | else
-                \ |   NERDTree
-                \ |   wincmd w 
                 \ | endif
 
 augroup CursorLine
