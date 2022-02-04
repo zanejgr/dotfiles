@@ -1,0 +1,94 @@
+{
+    "python.formatting.provider": "black",
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "pythonautovenv.preferPipenv": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django"
+    ],
+    "editor.renderWhitespace": "none",
+    "git.autofetch": true,
+    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "[html]": {
+        "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+    },
+    "kite.showWelcomeNotificationOnStartup": false,
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "mssql.connections": [
+        {
+            "server": "{{put-server-name-here}}",
+            "database": "{{put-database-name-here}}",
+            "user": "{{put-username-here}}",
+            "password": ""
+        }
+    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "markdownlint.customRules": [
+        "{docsmsft.docs-linting}/markdownlint-custom-rules/rules.js"
+    ],
+    "markdownlint.config": {
+        "MD028": false,
+        "MD025": {
+            "front_matter_title": ""
+        }
+    },
+    "cSpell.userWords": [
+        "align",
+        "binary",
+        "blockees",
+        "cavv",
+        "chain",
+        "commandline",
+        "cref",
+        "decryptor",
+        "devuser",
+        "DIVX",
+        "dnfin",
+        "echeck",
+        "encryptor",
+        "exdai",
+        "expressions",
+        "expy",
+        "Favorited",
+        "Favoriting",
+        "flac",
+        "Gruvbox",
+        "gsudo",
+        "Hmac",
+        "iframe",
+        "José",
+        "massiveloop",
+        "MLSDK",
+        "Mukesh",
+        "multiline",
+        "multline",
+        "Paulo",
+        "Personalizations",
+        "Proto",
+        "resharper",
+        "structs",
+        "TDES",
+        "unban",
+        "unbuffered",
+        "Unprocessable",
+        "Unprotect",
+        "VRSDK",
+        "xscgen"
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "omnisharp.organizeImportsOnFormat": true,
+    "editor.formatOnType": true,
+    "yaml.schemas": {
+        "file:///toc.schema.json": "/toc\\.yml/i"
+    },
+    "cSpell.enableFiletypes": [
+        "properties"
+    ],
+    "window.zoomLevel": -1,
+    "diffEditor.ignoreTrimWhitespace": false
+}
