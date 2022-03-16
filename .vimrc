@@ -81,7 +81,7 @@ let ale_enabled=1
 let ale_python_auto_pipenv=1
 
 " stop autoinserting text
-set completeopt=menu,menuone,popup,noselect,noinsert             
+set completeopt=menu,menuone,preview,noselect,noinsert             
 
 """""""""""""""""""""""
 """ END ALE CONFIG  """
