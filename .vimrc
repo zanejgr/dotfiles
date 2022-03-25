@@ -1,3 +1,11 @@
+" detect work pc first
+if has('win32')
+	set runtimepath-=~/vimfiles
+	set runtimepath^=$USERPROFILE/vimfiles
+	set runtimepath-=~/vimfiles/after
+	set runtimepath+=$USERPROFILE/vimfiles/after
+	let $HOME=$USERPROFILE
+endif
 """""""""""""""""""""""""
 """BEGIN VUNDLE CONFIG"""
 """""""""""""""""""""""""
