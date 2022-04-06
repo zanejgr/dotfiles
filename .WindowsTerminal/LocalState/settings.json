@@ -1,14 +1,12 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
+    "actions": [
         {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -19,14 +17,11 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "bellStyle": "window"
         },
-        "list": 
-        [
+        "list": [
             {
                 "commandline": "powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -42,11 +37,19 @@
                 "startingDirectory": "C:\\Users\\zane.gray"
             },
             {
-                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
-                "hidden": false,
-                "name": "Debian",
-                "source": "Windows.Terminal.Wsl",
-                "tabTitle": "Debian"
+                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
+                "colorScheme": "Tomorrow Night Eighties",
+                "icon": "%SystemDrive%\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+                "name": "Git Bash",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "colorScheme": "Gruvbox Dark",
+                "commandline": "wsl.exe -d Arch",
+                "guid": "{4e532226-6b94-4abd-9d15-2450b8233037}",
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "Arch (Copy)",
+                "startingDirectory": "%USERPROFILE%"
             },
             {
                 "colorScheme": "Gruvbox Dark",
@@ -57,8 +60,30 @@
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
+        {
+            "name": "Tomorrow Night Eighties",
+            "black": "#000000",
+            "red": "#f2777a",
+            "green": "#99cc99",
+            "yellow": "#ffcc66",
+            "blue": "#6699cc",
+            "purple": "#cc99cc",
+            "cyan": "#66cccc",
+            "white": "#ffffff",
+            "brightBlack": "#000000",
+            "brightRed": "#f2777a",
+            "brightGreen": "#99cc99",
+            "brightYellow": "#ffcc66",
+            "brightBlue": "#6699cc",
+            "brightPurple": "#cc99cc",
+            "brightCyan": "#66cccc",
+            "brightWhite": "#ffffff",
+            "background": "#2d2d2d",
+            "foreground": "#cccccc",
+            "selectionBackground": "#515151",
+            "cursorColor": "#cccccc"
+        },
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
