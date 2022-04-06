@@ -1,12 +1,14 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions": 
+    [
         {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -17,11 +19,14 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-    "profiles": {
-        "defaults": {
+    "profiles": 
+    {
+        "defaults": 
+        {
             "bellStyle": "window"
         },
-        "list": [
+        "list": 
+        [
             {
                 "commandline": "powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -37,8 +42,8 @@
                 "startingDirectory": "C:\\Users\\zane.gray"
             },
             {
-                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
                 "colorScheme": "Tomorrow Night Eighties",
+                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
                 "icon": "%SystemDrive%\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash",
                 "startingDirectory": "%USERPROFILE%"
@@ -52,7 +57,18 @@
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "colorScheme": "Gruvbox Dark",
+                "antialiasingMode": "grayscale",
+                "colorScheme": "FunForrest",
+                "commandline": "mysqlsh.exe --sql --vertical",
+                "font": 
+                {
+                    "face": "CaskaydiaCove NF"
+                },
+                "icon": "%USERPROFILE%\\Icons\\mysql-logo.png",
+                "name": "MySQL Shell"
+            },
+            {
+                "colorScheme": "Vintage",
                 "commandline": "powershell.exe -noe -c \"&{$vsPath = &(Join-Path ${env:ProgramFiles(x86)} '\\Microsoft Visual Studio\\Installer\\vswhere.exe') -property installationpath; Import-Module (Join-Path $vsPath 'Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll'); Enter-VsDevShell -VsInstallPath $vsPath -SkipAutomaticLocation}\"",
                 "icon": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\Assets\\VisualStudio.70x70.contrast-standard_scale-180.png",
                 "name": "Developer PowerShell for VS 2019",
@@ -60,30 +76,8 @@
             }
         ]
     },
-    "schemes": [
-        {
-            "name": "Tomorrow Night Eighties",
-            "black": "#000000",
-            "red": "#f2777a",
-            "green": "#99cc99",
-            "yellow": "#ffcc66",
-            "blue": "#6699cc",
-            "purple": "#cc99cc",
-            "cyan": "#66cccc",
-            "white": "#ffffff",
-            "brightBlack": "#000000",
-            "brightRed": "#f2777a",
-            "brightGreen": "#99cc99",
-            "brightYellow": "#ffcc66",
-            "brightBlue": "#6699cc",
-            "brightPurple": "#cc99cc",
-            "brightCyan": "#66cccc",
-            "brightWhite": "#ffffff",
-            "background": "#2d2d2d",
-            "foreground": "#cccccc",
-            "selectionBackground": "#515151",
-            "cursorColor": "#cccccc"
-        },
+    "schemes": 
+    [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -129,6 +123,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#C19C00"
+        },
+        {
+            "background": "#251200",
+            "black": "#000000",
+            "blue": "#4699A3",
+            "brightBlack": "#7F6A55",
+            "brightBlue": "#7CC9CF",
+            "brightCyan": "#E6A96B",
+            "brightGreen": "#BFC65A",
+            "brightPurple": "#D26349",
+            "brightRed": "#E55A1C",
+            "brightWhite": "#FFEAA3",
+            "brightYellow": "#FFCB1B",
+            "cursorColor": "#E5591C",
+            "cyan": "#DA8213",
+            "foreground": "#DEC165",
+            "green": "#919C00",
+            "name": "FunForrest",
+            "purple": "#8D4331",
+            "red": "#D6262B",
+            "selectionBackground": "#E5591C",
+            "white": "#DDC265",
+            "yellow": "#BE8A13"
         },
         {
             "background": "#282828",
@@ -290,6 +307,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#D3D7CF",
             "yellow": "#C4A000"
+        },
+        {
+            "background": "#2D2D2D",
+            "black": "#000000",
+            "blue": "#6699CC",
+            "brightBlack": "#000000",
+            "brightBlue": "#6699CC",
+            "brightCyan": "#66CCCC",
+            "brightGreen": "#99CC99",
+            "brightPurple": "#CC99CC",
+            "brightRed": "#F2777A",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFCC66",
+            "cursorColor": "#CCCCCC",
+            "cyan": "#66CCCC",
+            "foreground": "#CCCCCC",
+            "green": "#99CC99",
+            "name": "Tomorrow Night Eighties",
+            "purple": "#CC99CC",
+            "red": "#F2777A",
+            "selectionBackground": "#515151",
+            "white": "#FFFFFF",
+            "yellow": "#FFCC66"
         },
         {
             "background": "#000000",
