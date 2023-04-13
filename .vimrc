@@ -1,10 +1,19 @@
+"
 " detect work pc first
-if has('win32')
-	set runtimepath-=~/vimfiles
-	set runtimepath^=$USERPROFILE/vimfiles
-	set runtimepath-=~/vimfiles/after
-	set runtimepath+=$USERPROFILE/vimfiles/after
-	let $HOME=$USERPROFILE
+" if has('win32')
+" 	set runtimepath-=~/vimfiles
+" 	set runtimepath^=$USERPROFILE/vimfiles
+" 	set runtimepath-=~/vimfiles/after
+" 	set runtimepath+=$USERPROFILE/vimfiles/after
+" 	let $HOME=$USERPROFILE
+" endif
+"
+
+" set python version
+if has('python3')
+	set pyx=3
+elseif has('python')
+	set pyx=2
 endif
 """""""""""""""""""""""""
 """BEGIN VUNDLE CONFIG"""
@@ -13,7 +22,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-let &rtp .= ',' . expand('<sfile>:p:h').'/_vim/bundle/Vundle.vim'
+let &rtp .= ',' . expand('<sfile>:p:h').'/.vim/bundle/Vundle.vim'
 call vundle#begin()
 
 """PLUGINS"""
@@ -33,11 +42,29 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-repeat'
 Plugin 'w0rp/ale'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'neoclide/coc.nvim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" Startify settings
+let g:startify_custom_header_quotes=[ [
+\ '⣿⣿⣿⣿⣿⣿⣿⣿⡿⢿⣛⣫⣭⢭⣿⣭⣭⣭⣽⣛⣻⣿⠿⣿⣿⣿⣿',
+\ '⣿⣿⣿⣿⣿⡿⡛⣩⣶⣿⣿⠏⠁⠄⠈⠉⠉⠁⠄⠉⠉⠉⠄⠄⠈⠉⣿',
+\ '⣿⣿⣿⣿⠋⢐⠠⣬⠄⠄⠄⢀⣠⣶⣤⢤⣴⣾⣶⣦⣤⡒⣿⣿⣶⣌⢿',
+\ '⣿⣿⣿⡿⣠⣈⡰⠟⢀⣴⣶⢻⣿⣿⣿⠸⣿⠘⣿⣿⣿⡇⢹⣿⣿⣿⡜',
+\ '⣿⣿⣿⢧⣿⣿⡇⠄⢸⣿⣿⢸⣿⣿⡟⡄⣿⡞⡜⣿⣿⣿⢀⢿⣿⡇⢃',
+\ '⣿⣿⣿⢸⣿⣿⣿⠄⣆⠿⢇⣙⡛⠛⣱⣧⣭⣵⣷⠌⡉⠉⡸⡌⣭⡅⣎',
+\ '⣿⣿⡏⣿⣿⣿⣿⡄⣿⣿⡟⣱⠎⣩⠐⣿⣿⣿⣿⡇⣳⣂⢹⣄⢿⣷⢹',
+\ '⣿⣿⣧⣿⣿⣿⣿⡇⣿⣿⣿⣿⡀⠭⢚⣼⣿⣿⣿⣷⣬⣥⣾⣿⡘⣿⡏',
+\ '⣿⣿⢸⣿⣿⣿⣿⡇⣿⠛⣿⣿⣟⣯⣿⠛⠛⠛⢉⣛⡋⣽⣿⣿⢧⡿⡇',
+\ '⣿⡟⣾⣿⣿⣿⣿⡇⣿⢠⠻⣿⣿⣿⣿⡄⠄⠄⠄⠄⢡⣿⡟⡋⣼⣤⣤',
+\ '⣿⢣⣿⣿⣿⣿⣿⣧⣭⣼⣼⣶⣯⣍⣛⣿⣶⣶⡒⣪⣭⣶⣾⡇⣿⣿⣿',
+\ ]]
+
+let g:startify_custom_header = 
+  \'startify#center(startify#fortune#boxed())'
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -53,6 +80,10 @@ filetype plugin indent on    " required
 
 """""""""""""""""""""""
 """END VUNDLE CONFIG"""
+"""""""""""""""""""""""
+
+"""""""""""""""""""""""
+"""COC Configuration"""
 """""""""""""""""""""""
 
 """""""""""""""""""""""
@@ -73,6 +104,7 @@ let ale_set_highlights=1
 let ale_sign_highlight_linenrs=1
 let ale_update_tagstack=1
 let ale_python_black_autopipenv=1
+let g:ale_disable_lsp=1
 
 " Allow ALE to handle fixers
 let g:ale_fixers = {
@@ -96,17 +128,17 @@ set completeopt=menu,menuone,preview,noselect,noinsert
 """""""""""""""""""""""
 
 " add tags if there is one in this directory, or any of its ancestors
-set tags=./tags;,tags;
+set tags=./.tags;,.tags;
 autocmd DirChanged * :execute "set tags=./tags;,tags;"
 	
 " open NERDTree and Startify if no file was specified
-autocmd VimEnter *
-                \   if !argc()
-                \ |   Startify
-                \ |   NERDTree
-                \ |   wincmd w 
-								\ | else
-                \ | endif
+" autocmd VimEnter *
+"                 \   if !argc()
+"                 \ |   Startify
+"                 \ |   NERDTree
+"                 \ |   wincmd w 
+" 								\ | else
+"                 \ | endif
 
 augroup CursorLine
   au!
@@ -124,6 +156,7 @@ set incsearch
 set number
 set wildmenu
 set wildmode=longest:full,full
+
 
 " Settings based on which vim is running
 if has("gui_running")
